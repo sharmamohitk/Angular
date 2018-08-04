@@ -1,0 +1,80 @@
+
+<div class="main-container"><!--The content below is only a placeholder and can be replaced.-->
+ <div class="header">
+
+        <a class="list-menu active"  href="#">Home</a>
+        <a  class="list-menu" href="#">News</a>
+        <a  class="list-menu" href="#">Contact</a>
+        <a class="list-menu"  href="#">About</a>
+
+  </div>
+
+<div class="container1">
+
+   <table class="container-table">
+
+    <tr>
+      <th>Name </th>
+      <th>Country </th>
+      <th>City </th>
+      <th>Address </th>
+    </tr>
+    
+     <tr *ngFor="let user of usersByPromise ; index as i;">
+        <td [ngClass]="{'even': i%2==0, 'odd':  i%2!=0}">{{user.name}}</td>
+        <td [ngClass]="{'even': i%2==0, 'odd':  i%2!=0}" >{{user.country}}</td>
+        <td [ngClass]="{'even': i%2==0, 'odd':  i%2!=0}">{{user.city}}</td>
+        <td [ngClass]="{'even': i%2==0, 'odd':  i%2!=0}">{{user.address}}</td>
+      </tr>
+   </table>
+</div>
+
+<div class="container2">
+   <table class="container-table">
+          <tr>
+            <th>Name </th>
+            <th>Country </th>
+            <th>City </th>
+            <th>Address </th>
+          </tr>
+          
+           <tr *ngFor="let user of usersByObservable; index as i;">
+              <td [ngClass]="{'even': i%2==0, 'odd':  i%2!=0}">{{user.name}}</td>
+              <td [ngClass]="{'even': i%2==0, 'odd':  i%2!=0}">{{user.country}}</td>
+              <td [ngClass]="{'even': i%2==0, 'odd':  i%2!=0}" >{{user.city}}</td>
+              <td [ngClass]="{'even': i%2==0, 'odd':  i%2!=0}">{{user.address}}</td>
+            </tr>
+    </table>
+  </div>
+
+
+<h4> Get All Users Data Using Observable Async Pipe</h4>
+<div class="container3">
+   <table class="container-table">
+          <tr>
+            <th>Name </th>
+            <th>Country </th>
+            <th>City </th>
+            <th>Address </th>
+          </tr>
+          
+           <tr *ngFor="let user of usersByObservableAsync | async; index as i;">
+              <td [ngClass]="{'even': i%2==0, 'odd':  i%2!=0}">{{user.name}}</td>
+              <td [ngClass]="{'even': i%2==0, 'odd':  i%2!=0}">{{user.country}}</td>
+              <td [ngClass]="{'even': i%2==0, 'odd':  i%2!=0}" >{{user.city}}</td>
+              <td [ngClass]="{'even': i%2==0, 'odd':  i%2!=0}">{{user.address}}</td>
+            </tr>
+    </table>
+  </div>
+
+
+<div class="buttons-container">   
+    <button (click)="getUsersByObservableWithAsyncPipe()">Users Using Observable Async </button>
+    <button (click)="upDateDataSharedToChildComponent()">Update Data Shareed to Child Component</button>
+</div>
+
+<div class="child-container">
+       <app-child [organization] = "userCompany" (sendUpdatedOrgFromChild)="updateOrganization($event)" ></app-child>
+</div>
+
+</div>

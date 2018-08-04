@@ -1,0 +1,12 @@
+
+.child-data button {
+    float: left;
+    padding: 10px 10px 10px 10px;
+    margin: 25px 15px 15px 15px;
+    background-color: rgba(179, 179, 201, 0.911);
+}
+
+.child-data input {
+    padding: 10px 10px 10px 10px;
+    margin: 25px 15px 15px 15px;
+}
