@@ -23,10 +23,7 @@ export class ChildComponent implements OnInit,OnDestroy, OnChanges {
       let change = changes[propName];
       let curVal  = JSON.stringify(change.currentValue);
       let prevVal = JSON.stringify(change.previousValue);
-    
-            console.log(curVal);
-            console.log(prevVal);
-         }
+    }
   }
   ngOnInit() {
   }

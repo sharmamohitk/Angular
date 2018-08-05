@@ -6,14 +6,18 @@ import { ChildComponent } from './child/child.component';
 import {UserService} from './user.service';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import {ColorPickerModule} from 'ngx-color-picker';
+import { ColorSampleComponent } from './color-sample/color-sample.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent
+    ChildComponent,
+    ColorSampleComponent
   ],
   imports: [
-    BrowserModule,HttpModule,FormsModule
+    BrowserModule,HttpModule,FormsModule,ColorPickerModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

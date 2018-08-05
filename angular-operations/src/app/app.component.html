@@ -76,5 +76,17 @@
 <div class="child-container">
        <app-child [organization] = "userCompany" (sendUpdatedOrgFromChild)="updateOrganization($event)" ></app-child>
 </div>
+<div class="child-container">
+    <color-sample
+    [color]="primary"
+    #primaryColorSample (click)="openColorPicker()"
+    ></color-sample>
+
+    Primary Color:: <input #primaryInput  name="primary"
+    [(colorPicker)]="primary"
+    cpPosition="bottom"
+    [(ngModel)]="primary"/>
+
+</div>
 
 </div>
