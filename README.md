@@ -1,5 +1,4 @@
 # Angular
-# JavaCoreConcepts
 create a new repository on the command line
 1. go to project folder on your machine
 2. git init  // it will mark your folder as a git repository and it will be a local repository
